@@ -1,0 +1,131 @@
+.pager {
+  list-style: none;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.pager > li {
+  min-width: 30px;
+  max-width: 60px;
+  height: 30px;
+  background-color: var(--card_bg);
+  border-radius: 5px;
+  transition: all 0.3s;
+  margin-right: 10px;
+}
+.pager > li:last-child {
+  margin-right: 0;
+}
+.pager > li a {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  display: inline-flex;
+  padding: 0 10px;
+}
+.pager > li:hover {
+  background-color: var(--active);
+}
+.pager > li:hover a {
+  color: white;
+}
+.pager > li.active {
+  background-color: var(--active);
+}
+.pager > li.active a {
+  color: var(--card_bg);
+}
+
+.maint .title {
+  padding: 10px 10px 20px 300px;
+}
+.maint > .body {
+  background-color: transparent;
+  padding: 0;
+}
+.maint > .body > ul {
+  width: 50%;
+  padding-left: 300px;
+}
+.maint > .body > ul > li {
+  width: 100%;
+  display: flex;
+  background-color: white;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+.maint > .body > ul > li:first-child .left {
+  border-radius: 0 0 5px 5px;
+  padding: 10px 10px 20px 20px;
+}
+.maint > .body > ul > li:first-child .right {
+  padding: 10px 20px 20px 10px;
+}
+.maint > .body > ul > li .left {
+  width: 30%;
+  box-sizing: border-box;
+  padding: 20px 10px 20px 20px;
+}
+.maint > .body > ul > li .left > div {
+  width: 100%;
+  height: 110px;
+  overflow: hidden;
+  border-radius: 5px;
+}
+.maint > .body > ul > li .left img {
+  width: 100%;
+  display: block;
+  transition: all 0.3s;
+}
+.maint > .body > ul > li .left img:hover {
+  transform: scale(1.1);
+}
+.maint > .body > ul > li .right {
+  width: 40%;
+  padding: 20px 20px 20px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+.maint > .body > ul > li .right > h2 {
+  font-size: 24px;
+}
+.maint > .body > ul > li .right p {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.maint > .body > ul > li .right .article_info {
+  font-size: 14px;
+  color: #555;
+}
+.maint > .body > ul > li .right .article_info > span {
+  margin-right: 10px;
+}
+.maint > .body > ul > li .right .article_info > span i {
+  margin-right: 5px;
+}
+.maint > .body > ul > li .right > a {
+  width: 80px;
+  height: 35px;
+  position: absolute;
+  right: -100px;
+  bottom: 20px;
+  background-color: #ff9800;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+}
+.maint > .body > ul > li .right > a a {
+  color: white;
+}
+
+/*# sourceMappingURL=tech.css.map */

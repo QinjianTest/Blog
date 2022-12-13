@@ -1,0 +1,114 @@
+@import "./pager";
+
+.maint {
+  .title{
+    padding: 10px 10px 20px 300px;
+  }
+  > .body {
+    background-color: transparent;
+    padding: 0;
+
+    > ul {
+      width: 50%;
+      padding-left: 300px;
+
+      > li {
+        width: 100%;
+        display: flex;
+        background-color: white;
+        margin-bottom: 20px;
+        border-radius: 5px;
+
+        &:first-child {
+          .left {
+            border-radius: 0 0 5px 5px;
+            padding: 10px 10px 20px 20px;
+          }
+
+          .right {
+            padding: 10px 20px 20px 10px;
+          }
+        }
+
+        .left {
+          width: 30%;
+          box-sizing: border-box;
+          padding: 20px 10px 20px 20px;
+
+          > div {
+            width: 100%;
+            height: 110px;
+            overflow: hidden;
+            border-radius: 5px;
+          }
+
+          img {
+            width: 100%;
+            display: block;
+            transition: all 0.3s;
+
+            &:hover {
+              transform: scale(1.1);
+            }
+          }
+        }
+
+        .right {
+          width: 40%;
+          padding: 20px 20px 20px 10px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          position: relative;
+
+          > h2 {
+            font-size: 24px;
+          }
+
+          p {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+
+          .article_info {
+            font-size: 14px;
+            color: #555;
+
+            > span {
+              margin-right: 10px;
+
+              i {
+                margin-right: 5px;
+              }
+            }
+          }
+
+          > a {
+            width: 80px;
+            height: 35px;
+            position: absolute;
+            right: -100px;
+            bottom: 20px;
+
+            background-color: #ff9800;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+
+
+            a {
+              color: white;
+            }
+          }
+        }
+      }
+    }
+  }
+}

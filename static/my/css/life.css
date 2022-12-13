@@ -1,0 +1,73 @@
+.up {
+  margin-right: 20px;
+}
+.up h3 {
+  color: #ff9800;
+}
+.up h4 {
+  margin-top: 300px;
+  color: #ff9800;
+  font-size: 18px;
+}
+
+.life {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.life .left {
+  width: 50%;
+}
+.life .left > div {
+  position: relative;
+}
+.life .left > div p {
+  position: absolute;
+  left: 30px;
+  top: 20px;
+  color: #ff9800;
+  font-size: 18px;
+  font-weight: bolder;
+}
+.life .left > div img {
+  width: 450px;
+  height: 300px;
+  overflow: hidden;
+  margin-bottom: 50px;
+  margin-right: 50px;
+  cursor: pointer;
+  transition: all 0.5s;
+  object-fit: contain;
+}
+.life .left > div img:hover {
+  transform: scale(2);
+}
+.life .right {
+  width: 50%;
+}
+.life .right > div {
+  position: relative;
+}
+.life .right > div p {
+  position: absolute;
+  left: 30px;
+  top: 20px;
+  color: #ff9800;
+  font-size: 18px;
+  font-weight: bolder;
+}
+.life .right > div img {
+  width: 450px;
+  height: 300px;
+  overflow: hidden;
+  margin-bottom: 50px;
+  margin-right: 50px;
+  cursor: pointer;
+  transition: all 0.5s;
+  object-fit: contain;
+}
+.life .right > div img:hover {
+  transform: scale(2);
+}
+
+/*# sourceMappingURL=life.css.map */

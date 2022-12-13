@@ -1,0 +1,30 @@
+.aboutme .title {
+  padding-bottom: 30px;
+  position: relative;
+  padding-left: 100px;
+}
+.aboutme .title b {
+  font-weight: lighter;
+}
+.aboutme .myself {
+  display: flex;
+}
+.aboutme .myself .left {
+  width: 40%;
+  padding-left: 100px;
+}
+.aboutme .myself .left img {
+  width: 80%;
+}
+.aboutme .myself .right {
+  width: 50%;
+  padding-left: 30px;
+}
+.aboutme .myself .right > div h3 {
+  padding: 20px 10px 10px 0;
+}
+.aboutme .myself .right > div p {
+  padding: 5px;
+}
+
+/*# sourceMappingURL=about.css.map */

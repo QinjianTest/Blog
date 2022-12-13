@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load my_tag %}
+<head>
+    <meta charset="UTF-8">
+    <title>覃见的博客</title>
+    <link rel="shortcut icon" href="/static/my/img/favicon.ico"/>
+    <link rel="stylesheet" href="/static/my/css/index.css">
+    <link rel="stylesheet" href="/static/my/css/reset.css">
+    <link rel="stylesheet" href="/static/fontawesome-free-5/css/all.min.css ">
+    <script src="/static/vue/vue.js"></script>
+
+</head>
+<body>
+<div id="app">
+    <link rel="stylesheet" :href="'/static/my/css/theme/'+theme+'.css'">
+    <nav class="nav_bg">
+        <div class="left">
+            <a href="/">首页</a>
+            <a href="/tech">技术分享</a>
+            <a href="/testxmind">测试总结xmind</a>
+            <a href="/life">生活记录</a>
+            <a href="/about">关于我</a>
+        </div>
+        <div class="right">
+            <img v-show="theme === 'light'" src="/static/my/img/nav/light.svg" @click="setTheme('dark')" alt="">
+            <img v-show="theme === 'dark'" src="/static/my/img/nav/dark.svg" @click="setTheme('light')" alt="">
+<!--            <a href="#">登录</a>-->
+<!--            <a href="#">注册</a>-->
+        </div>
+    </nav>
+<!--    首页轮播图-->
+    {% banner 'index' %}
+    <main>
+        {% block main %}
+            <div class="main">
+                <div class="left">
+                    <div class="boutique_article card">
+                        <div class="title">
+                            <h2>精选文章</h2>
+                            <div class="swich_article">
+                                <span :active="this_category === 'qianduan'" @click="swich_article('qianduan')">技术</span>
+                                <span :active="this_category === 'houduan'" @click="swich_article('houduan')">晒娃</span>
+                            </div>
+
+                        </div>
+                        <div class="body">
+                            <ul v-show="this_category==='qianduan'" class="qianduan">
+                                {% for tech in tech_list %}
+                                    <li>
+                                        <div class="left">
+                                            <img src="/static/my/img/article/{{ tech.cover_id }}.jpg" alt="">
+                                        </div>
+                                        <div class="right">
+                                            <h2><a href="/article/{{ tech.nid }}">{{ tech.title }}</a></h2>
+                                            <p>{{ tech.abstract }}</p>
+                                            <span>{{ tech.create_date|date:'Y-m-d' }}</span>
+                                        </div>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                            <ul v-show="this_category==='houduan'" class="houduan">
+                                {% for life in life_list %}
+                                    <li>
+                                        <div class="left">
+                                            <img src="/static/my/img/article/{{ life.cover_id }}.jpg" alt="">
+                                        </div>
+                                        <div class="right">
+                                            <h2><a href="/article/{{ life.nid }}">{{ life.title }}</a></h2>
+                                            <p>{{ life.abstract }}</p>
+                                            <span>{{ life.create_date|date:'Y-m-d' }}</span>
+                                        </div>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="hotlist card">
+                           <div id="con">
+
+                            </div>
+                            <div class="title">
+                                <h2 id="pos">寄语</h2>
+                            </div>
+                            <div class="body">
+                                测试 其实是预防而不是发现
+                            </div>
+
+                    </div>
+                    <div class="all_article card">
+                        <div class="title">
+                            <h2>博客文章</h2>
+                        </div>
+                        <div class="body">
+                            <ul>
+                                {% for article in article_list %}
+                                    <li>
+                                    <div class="left">
+                                        <div><img src="/static/my/img/article/{{ article.cover_id }}.jpg" alt=""></div>
+                                    </div>
+                                    <div class="right">
+                                        <h2><a href="/article/{{ article.nid }}/">{{ article.title }}</a></h2>
+                                        <p>{{ article.abstract }}</p>
+                                        <div class="article_info">
+                                            <span>
+                                                <i class="far fa-clock">{{ article.create_date|date:'Y-m-d' }}</i>
+                                            </span>
+                                            <span>
+                                                <i class="far fa-thumbs-up">{{ article.digg_count }}</i>
+                                            </span>
+                                            <span>
+                                                <i class="far fa-eye">{{ article.look_count }}</i>
+                                            </span>
+                                        </div>
+                                        <a href="/article/{{ article.nid }}/" target="_blank">查看详情</a>
+                                    </div>
+                                </li>
+                                {% endfor %}
+
+                            </ul>
+                            <ul class="pager">
+                                {{ pager.page_html|safe }}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="myself card">
+                        <div class="title">
+                            <h2>个人标签</h2>
+                        </div>
+                        <div class="body">
+                            <ul>
+                                <li>性能测试</li>
+                                <li>自动化测试</li>
+                                <li>测试开发</li>
+                                <li>Python</li>
+                                <li>Django</li>
+                                <li>Flask</li>
+                                <li>RF</li>
+                                <li>Jmeter</li>
+                                <li>Jenkins</li>
+                                <li>Java</li>
+                                <li>Shell</li>
+                                <li>html/css/vue</li>
+                                <li>平安组长</li>
+                                <li>顺丰负责人</li>
+                                <li>虾皮SE</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="site_info card">
+                        <div class="title">
+                            <h2>站点信息</h2>
+                        </div>
+                        <div class="body">
+                            <div class="item">
+                                <b>建站时间: </b><span>2022年03月01日</span>
+                            </div>
+                             <div class="item">
+                                <b>网站程序: </b><span>Django+Vue.js</span>
+                            </div>
+                            <div class="item">
+                                <b>技术文章: </b><span>32</span>
+                            </div>
+                            <div class="item">
+                                <b>生活分享: </b><span>12</span>
+                            </div>
+                            <div class="item">
+                                <b>访问人数: </b><span>1323</span>
+                            </div>
+                            <div class="item">
+                                <b>网站建设: </b><span>覃见</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="links card">
+                        <div class="title">
+                            <h2>友情链接</h2>
+                        </div>
+<!--                        <div class="body">-->
+<!--                            <a href="http://www.fengfengzhidao.com/" target="_blank" >枫枫知道个人博客</a>-->
+<!--                        </div>-->
+
+                    </div>
+                </div>
+            </div>
+        {% endblock %}
+    </main>
+
+
+    <footer>
+        <div class="left">
+            <p class="thank">
+                Thanks for coming!
+            </p>
+            <p>
+                建站日期: 2022-03-01
+            </p>
+            <p>
+                <a href="https://beian.miit.gov.cn/"><img src="/static/my/img/footer/badges.png" alt=""> </a>
+                备案号:
+            </p>
+        </div>
+        <div class="right">
+            <div class="contact">
+                <div>
+                        <a href="https://github.com/QinjianTest" target="_blank"><img class="svg" src="/static/my/img/footer/github_icon.svg" alt="">Github</a>
+                </div>
+                <p>
+                    联系方式：qj_jianjian@qq.com
+                </p>
+            </div>
+
+        </div>
+    </footer>
+
+</div>
+
+<script>
+    new Vue({
+        el:'#app',
+        delimiters: ["[[","]]"],
+        data:{
+            theme:'light',//默认主题
+            this_category:'qianduan',//当前位置
+        },
+        created(){
+            this.init_theme()
+        },
+        methods:{
+            //初始化主题
+            init_theme(){
+                //读取存储的主题信息
+                let theme = localStorage.getItem('theme')
+                if (theme){
+                    this.theme = theme
+                }
+            },
+            //设置主题,持久化存储
+            setTheme(themeName){
+                this.theme = themeName
+                localStorage.setItem('theme',themeName)
+            },
+            //选择分类
+            swich_article(categoryName){
+                this.this_category = categoryName
+            }
+        }
+
+    })
+
+    //获取需要轮播的div，首页图片轮播
+    let menu_img = document.querySelectorAll('.dynamic_shuffl')
+
+    //获取长度
+    let menu_length = menu_img.length
+    //初始位置
+    let index = 0
+    let timer = null;
+    clearInterval(timer)
+    timer = setInterval(() => {
+        index++
+        //到尾部
+        if (index == menu_length){
+            index = 0
+        }
+        //样式复原
+        for (let i of menu_img){
+            i.style.opacity = 0
+        }
+        menu_img[index].style.opacity = 1
+    },2000)
+
+    //动态导航栏
+    let nav = document.querySelector('.nav_bg')
+    window.onscroll = function () {
+        let top =document.documentElement.scrollTop
+        if (top >= 500){
+            nav.classList.add('show')
+        }else{
+            nav.classList.remove('show')
+        }
+    }
+</script>
+{% block js %}
+{% endblock %}
+
+</body>
+</html>

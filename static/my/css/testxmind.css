@@ -1,0 +1,54 @@
+.testxmind .title {
+  padding-bottom: 30px;
+}
+.testxmind .title b {
+  font-weight: lighter;
+}
+.testxmind .xminds ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+.testxmind .xminds ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 49%;
+  height: 40px;
+  font-size: 15px;
+}
+.testxmind .xminds ul li:nth-child(4n+1), .testxmind .xminds ul li:nth-child(4n+2) {
+  background-color: #555555;
+}
+.testxmind .xminds ul li:nth-child(4n+1) a, .testxmind .xminds ul li:nth-child(4n+2) a {
+  color: #e4ab0d;
+}
+.testxmind .xminds ul li:nth-child(4n+1) i, .testxmind .xminds ul li:nth-child(4n+2) i {
+  margin-right: 5px;
+  color: #f5f5f5;
+  background-size: 10px;
+}
+.testxmind .xminds ul li:nth-child(4n+3), .testxmind .xminds ul li:nth-child(4n+4) {
+  background-color: #c9c9c9;
+}
+.testxmind .xminds ul li:nth-child(4n+3) a, .testxmind .xminds ul li:nth-child(4n+4) a {
+  color: #0F192A;
+}
+.testxmind .xminds ul li:nth-child(4n+3) i, .testxmind .xminds ul li:nth-child(4n+4) i {
+  margin-right: 5px;
+  color: black;
+  background-size: 10px;
+}
+.testxmind .xminds ul li:nth-child(3n+1), .testxmind .xminds ul li:nth-child(3n+2), .testxmind .xminds ul li:nth-child(3n+3) {
+  border-right: 1px solid #f0eeee;
+}
+.testxmind .tobe {
+  padding: 20px 10px 10px 10px;
+  float: right;
+}
+.testxmind .tobe b {
+  font-weight: lighter;
+  font-size: 18px;
+}
+
+/*# sourceMappingURL=testxmind.css.map */

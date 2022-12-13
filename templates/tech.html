@@ -1,0 +1,41 @@
+{% extends 'index.html' %}
+
+{% block main %}
+
+<link rel="stylesheet" href="/static/my/css/tech.css">
+<link rel="stylesheet" href="/static/my/css/reset.css">
+
+<div class="maint">
+
+    <div class="body">
+        <div class="title">
+            <h2>博客文章</h2>
+        </div>
+        <ul>
+            {% for article in article_list %}
+            <li>
+                <div class="left">
+                    <div><img src="/static/my/img/article/{{ article.cover_id }}.jpg" alt=""></div>
+                </div>
+                <div class="right">
+                    <h2><a href="/article/{{ article.nid }}/">{{ article.title }}</a></h2>
+                    <p>{{ article.abstract }}</p>
+                    <div class="article_info">
+                        <span><i class="far fa-clock">{{ article.create_date|date:'Y-m-d' }}</i></span>
+                        <span><i class="far fa-thumbs-up">{{ article.digg_count }}</i></span>
+                        <span><i class="far fa-eye">{{ article.look_count }}</i></span>
+                    </div>
+                    <a href="/article/{{ article.nid }}/" target="_blank">查看详情</a>
+                </div>
+            </li>
+            {% endfor %}
+
+        </ul>
+        <ul class="pager">
+            {{ pager.page_html|safe }}
+        </ul>
+    </div>
+</div>
+
+
+{% endblock %}
