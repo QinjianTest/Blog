@@ -8,8 +8,8 @@ from lib.pagination import Pagination
 
 def index(request):
     article_list = Articles.objects.filter(status=1).order_by('-change_date')
-    tech_list = Articles.objects.filter(Q(category=1)&Q(recommend=1))[:6]
-    life_list = Articles.objects.filter(Q(category=2)&Q(recommend=1))[:6]
+    tech_list = Articles.objects.filter(Q(category=1)&Q(recommend=1)).order_by('-change_date')[:6]
+    life_list = Articles.objects.filter(Q(category=2)&Q(recommend=1)).order_by('-change_date')[:6]
 
     query_params = request.GET.copy()
     pager = Pagination(
