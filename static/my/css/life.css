@@ -40,7 +40,7 @@
   object-fit: contain;
 }
 .life .left > div img:hover {
-  transform: scale(2);
+  transform: scale(1.5);
 }
 .life .right {
   width: 50%;
@@ -67,7 +67,7 @@
   object-fit: contain;
 }
 .life .right > div img:hover {
-  transform: scale(2);
+  transform: scale(1.5);
 }
 
 /*# sourceMappingURL=life.css.map */
