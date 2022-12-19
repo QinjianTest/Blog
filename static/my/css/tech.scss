@@ -2,15 +2,15 @@
 
 .maint {
   .title{
-    padding: 10px 10px 20px 300px;
+    padding: 10px 10px 20px 0px;
   }
   > .body {
     background-color: transparent;
     padding: 0;
 
     > ul {
-      width: 50%;
-      padding-left: 300px;
+      width: 100%;
+      //padding-left: 80px;
 
       > li {
         width: 100%;
