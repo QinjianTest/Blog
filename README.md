@@ -20,8 +20,7 @@
 ### 克隆项目
 
 ```bash
-git clone https://github.com/yourusername/your-weibo-project.git
-cd your-weibo-project
+https://github.com/QinjianTest/Blog.git
 ```
 ### 安装依赖
 
